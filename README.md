@@ -1,4 +1,5 @@
-## Lesson 7. Задачи:
+## Lesson 7. 
+### Задачи:
 #### 1. Создать массив объектов, где объект имеет следующую структуру: 
 id: Something unique<br>
 title: String,<br>
@@ -27,7 +28,8 @@ redemption through basic compassion.” This movie starred DiCaprio, van Damme a
 #### ATTENTION: доделываем баги в предыдущих домашках тоже
 
 
-## Lesson 6. Домашнее задание:
+## Lesson 6. 
+### Домашнее задание:
 #### 1. Верстка страницы signup + фиксы по предыдущей (все должно лежать в репозитории HBO).
   https://www.figma.com/file/rvBRnugexZGgjSv7vqvqNN/HBO?node-id=0-1&t=wLgx7uB4GotR541q-0 
 #### 2. Все, что написано на картинке + инфу из объекта occupation выводим в html (создаем новый репозиторий JavaScript)

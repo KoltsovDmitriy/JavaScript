@@ -1,8 +1,3 @@
-## Lesson 6. Домашнее задание:
-#### 1. Верстка страницы signup + фиксы по предыдущей (все должно лежать в репозитории HBO).
-  https://www.figma.com/file/rvBRnugexZGgjSv7vqvqNN/HBO?node-id=0-1&t=wLgx7uB4GotR541q-0 
-#### 2. Все, что написано на картинке + инфу из объекта occupation выводим в html (создаем новый репозиторий JavaScript)
-
 ## Lesson 7. Задачи:
 #### 1. Создать массив объектов, где объект имеет следующую структуру: 
 id: Something unique<br>
@@ -30,3 +25,9 @@ redemption through basic compassion.” This movie starred DiCaprio, van Damme a
 #### UPD: как вы заметили в строке, которую нужно вывести в консоль есть такая часть " It was rated by 23 users, with a total rating of 9. " соответственно, эта инфа должна браться из свойства reviews чтобы было так: если я добавлю в массив reviews еще элементы, то у меня и должна в зависимости от этого меняться строка и средний рейтинг
 
 #### ATTENTION: доделываем баги в предыдущих домашках тоже
+
+
+## Lesson 6. Домашнее задание:
+#### 1. Верстка страницы signup + фиксы по предыдущей (все должно лежать в репозитории HBO).
+  https://www.figma.com/file/rvBRnugexZGgjSv7vqvqNN/HBO?node-id=0-1&t=wLgx7uB4GotR541q-0 
+#### 2. Все, что написано на картинке + инфу из объекта occupation выводим в html (создаем новый репозиторий JavaScript)

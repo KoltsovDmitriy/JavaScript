@@ -56,7 +56,7 @@ for(let index = 0; index <= movieCollection.length - 1; index++){
     const numberOfScores = sumOfScores / numberOfUsers;
     // console.log(sumOfScores);
     // console.log(numberOfScores);
-    console.log(`The ${movieCollection[index].year} ${movieCollection[index].details.genre} “${movieCollection[index].title}”, which tells the story of “${movieCollection[index].description}” This movie starred ${movieCollection[index].actors} and etc. It was rated by ${numberOfUsers} users, with a total rating of ${numberOfScores}. Register to watch this ${movieCollection[index].details.genre}.`)
+    console.log(`The ${movieCollection[index].year} ${movieCollection[index].details.genre} “${movieCollection[index].title}”, which tells the story of “${movieCollection[index].description}” This movie starred ${movieCollection[index].actors.join(", ")} and etc. It was rated by ${numberOfUsers} users, with a total rating of ${numberOfScores}. Register to watch this ${movieCollection[index].details.genre}.`)
 }
 
  function getMovieByYear(movie, year){
@@ -69,8 +69,8 @@ for(let index = 0; index <= movieCollection.length - 1; index++){
 
  function getMovieByTitle(movie, title){
     const filteredMovies = movie.filter((movie) =>{
-        return movie.title.includes(title);
+        return movie.title.toLowerCase().includes(title);
     }) 
     return filteredMovies; 
  }
- console.log(getMovieByTitle(movieCollection, 'Nobody'));
+ console.log(getMovieByTitle(movieCollection, 'bad'));

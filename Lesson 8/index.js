@@ -33,6 +33,7 @@ const polindrom = (string) => {
     return string.toLowerCase() === reversedString.toLowerCase();
 };
 console.log(polindrom('Lol'));
+
 //Way 2
 const polindromAnalog = (string) =>{
     const reversedString = string.split('').reverse().join('');

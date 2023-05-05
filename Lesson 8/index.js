@@ -2,19 +2,20 @@
 
 const getWord = (number,arrayWords) => {
     const division = number % 10;
-
-    if (division == 1 && number != 11) {
+    const divisionTwo = number % 100;
+    
+    if (division == 1 && divisionTwo != 11) {
         console.log(number, arrayWords[0]);
     }
-    else if ((division == 2 && number != 12) || (division == 3 && number != 13) || (division == 4 && number != 14)) {
+    else if ((division == 2 && divisionTwo != 12) || (division == 3 && divisionTwo != 13) || (division == 4 && divisionTwo != 14)) {
         console.log(number, arrayWords[1]);       
     }
     else
         console.log(number, arrayWords[2]);
 };
 
-getWord(76, ['фильм', 'фильма', 'фильмов']);
-getWord(736, ['предмет', 'предмета', 'предметов']);
+getWord(136, ['фильм', 'фильма', 'фильмов']);
+getWord(1121, ['предмет', 'предмета', 'предметов']);
 
 
 //English language. Logic from https://skysmart.ru/articles/english/mnozhestvennoe-chislo-sushestvitelnyh-v-anglijskom-yazyke
@@ -74,19 +75,19 @@ console.log(filterShows(movieCollection, filterCriteria));
 
 //Promt
 
-const result = prompt('Please enter a number from 0 to 100');
+// const result = prompt('Please enter a number from 0 to 100');
 
-if (result < 0 || result > 100) {
-    console.log('The number must be from 0 to 100');
-} else if (result <= 40) {
-    console.log('You failed the exam, try again');
-} else if (result <= 70) {
-    console.log('You passed the exam, but you have to attend additional classes');
-} else if (result <= 100) {
-    console.log('You passed the exam, get some rest before the next one');
-} else if (isNaN(result)) {
-    console.log('It must be a number');
-}
+// if (result < 0 || result > 100) {
+//     console.log('The number must be from 0 to 100');
+// } else if (result <= 40) {
+//     console.log('You failed the exam, try again');
+// } else if (result <= 70) {
+//     console.log('You passed the exam, but you have to attend additional classes');
+// } else if (result <= 100) {
+//     console.log('You passed the exam, get some rest before the next one');
+// } else if (isNaN(result)) {
+//     console.log('It must be a number');
+// }
 
 
 //Polindrom

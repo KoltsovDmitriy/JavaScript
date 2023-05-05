@@ -6,8 +6,7 @@ const getWord = (number,arrayWords) => {
     if (division == 1 && number != 11) {
         console.log(number, arrayWords[0]);
     }
-    else
-    if((division == 2 && number != 12) || (division == 3 && number != 13) || (division == 4 && number != 14)) {
+    else if ((division == 2 && number != 12) || (division == 3 && number != 13) || (division == 4 && number != 14)) {
         console.log(number, arrayWords[1]);       
     }
     else
@@ -27,28 +26,27 @@ const getWordEng= (number, string) => {
     const exceptions = 'man, men, person, people, woman, women, mouse, mice, foot, feet, child, children, tooth, teeth, goose, geese, ox, oxen, bacterium, bacteria, hypothesis, hypotheses, phenomenon, phenomena, stimulus, stimuli, fish, fish, fruit, fruit, species, species, deer, deer, sheep, sheep, water, water, dirt, dirt, cream,cream, love, love, information, information';
     const exceptionsArray = exceptions.split(', ');
    
-    if (number == 1){
+    if (number == 1) {
         console.log(number, word);
     }
-    else if(['s', 'x', 'z', 'o'].includes(endingOneLetter) || ['sh', 'ch', 'ss'].includes(endingTwoLetter)) {
+    else if (exceptionsArray.includes(word)) {
+        console.log(number, exceptionsArray[exceptionsArray.indexOf(word)+1]);
+    }
+    else if (['s', 'x', 'z', 'o'].includes(endingOneLetter) || ['sh', 'ch', 'ss'].includes(endingTwoLetter)) {
         console.log(number, word +'es');
     } 
     else if (['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z'].includes(endingTwoLetter[0]) && (endingOneLetter == 'y')) {
         console.log(number, word.slice(0, -1) +'ies');       
     }
-    
-    else if(endingOneLetter == 'f'){
+    else if (endingOneLetter == 'f') {
         console.log(number, word.slice(0, -1) +'ves');
     }
-    else if(endingTwoLetter == 'fe')
-    console.log(number, word.slice(0, -2) +'ves');
-    else if(exceptionsArray.includes(word)){
-        console.log(number, exceptionsArray[exceptionsArray.indexOf(word)+1]);
+    else if (endingTwoLetter == 'fe') {
+        console.log(number, word.slice(0, -2) +'ves');
     }
-    else
-    console.log(number, word + 's')
-   
     
+    else
+    console.log(number, word + 's');
 }
 getWordEng(2, 'cat')
 

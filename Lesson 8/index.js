@@ -44,31 +44,32 @@ const getWordEng= (number, string) => {
     else if (endingTwoLetter == 'fe') {
         console.log(number, word.slice(0, -2) +'ves');
     }
-    
     else
     console.log(number, word + 's');
 }
-getWordEng(2, 'cat')
+getWordEng(2, 'cave');
 
 
+//
+import {movieCollection} from './base.js';
 
+const filterShows = (movie, filterCriteria) => {
 
+    const resultFilm = movie.filter((movie) => { 
 
+        const totalScore = movie.details.reviews.reduce((a, b) => a + b.score, 0) / movie.details.reviews.length;
+        
+        if (movie.year >= filterCriteria.year && 
+            movie.title.toLowerCase().includes(filterCriteria.title) && 
+            totalScore >= filterCriteria.rating) {  
+        return true;
+        }
+    });     
+    return resultFilm;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const filterCriteria = {year: 2013, title: 'elb', rating: 5};
+console.log(filterShows(movieCollection, filterCriteria));
 
 
 //Promt

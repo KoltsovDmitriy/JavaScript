@@ -62,9 +62,9 @@ const filterShows = (movie, filterCriteria) => {
         
         if (movie.year >= filterCriteria.year && 
             movie.title.toLowerCase().includes(filterCriteria.title) && 
-            totalScore >= filterCriteria.rating) {  
+            totalScore >= filterCriteria.rating)  
         return true;
-        }
+        
     });     
     return resultFilm;
 }

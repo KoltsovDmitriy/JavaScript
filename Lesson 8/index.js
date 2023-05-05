@@ -75,19 +75,19 @@ console.log(filterShows(movieCollection, filterCriteria));
 
 //Promt
 
-// const result = prompt('Please enter a number from 0 to 100');
+const result = prompt('Please enter a number from 0 to 100');
 
-// if (result < 0 || result > 100) {
-//     console.log('The number must be from 0 to 100');
-// } else if (result <= 40) {
-//     console.log('You failed the exam, try again');
-// } else if (result <= 70) {
-//     console.log('You passed the exam, but you have to attend additional classes');
-// } else if (result <= 100) {
-//     console.log('You passed the exam, get some rest before the next one');
-// } else if (isNaN(result)) {
-//     console.log('It must be a number');
-// }
+if (result < 0 || result > 100) {
+    console.log('The number must be from 0 to 100');
+} else if (result <= 40) {
+    console.log('You failed the exam, try again');
+} else if (result <= 70) {
+    console.log('You passed the exam, but you have to attend additional classes');
+} else if (result <= 100) {
+    console.log('You passed the exam, get some rest before the next one');
+} else if (isNaN(result)) {
+    console.log('It must be a number');
+}
 
 
 //Polindrom

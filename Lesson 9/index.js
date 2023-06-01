@@ -20,7 +20,6 @@ const nameGenres = newMovies.map((genre) => {
 });
 const allGenre = [... new Set(nameGenres.flat())];
 
-
 const collectionByGenre = allGenre.map((genre) => {
     const moviesArr = [];
     

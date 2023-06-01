@@ -20,15 +20,18 @@ const nameGenres = newMovies.map((genre) => {
 });
 const allGenre = [... new Set(nameGenres.flat())];
 
-// console.log(allGenre);
 
-// debugger;
-allGenre.forEach((genres)=> {
-    newMovies.forEach((movie) => {
-        if ((movie.genre).includes(genres)){     
-            let movies = [movie.title]
-            let all = {genres, movies};
-            console.log(all);
-        };
+const collectionByGenre = allGenre.map((genre) => {
+    const moviesArr = [];
+    
+    newMovies.map((movie) => {        
+        if ((movie.genre).includes(genre)){    
+            moviesArr.push(movie.title);
+        }; 
     });
+
+    const collection = {genre, moviesArr};
+    return collection;    
 })
+
+console.log(collectionByGenre);

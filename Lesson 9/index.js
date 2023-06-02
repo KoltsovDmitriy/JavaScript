@@ -39,21 +39,28 @@ const rating = document.querySelector('.score-number');
 const filmsImage = document.querySelector('.films_image');
 const description = document.querySelector('.films_info-description');
 const genres = document.querySelector('.films_info-genre');
-// const similarMovies = document.querySelector('.similar-movies')
+const actorsInfo = document.querySelector('.actors_info');
+const similarMovies = document.querySelector('.similar-movies');
 
-
-//4
 const getMovie = (id) => {
     newMovies.forEach((movie) => {
-        if(movie.id === id) {
+        if (movie.id === id) {
             title.innerText = movie.title;
+
+            if (movie.rating >=8) {
+                rating.style.color = '#64C342';
+            } else if (movie.rating >=6) {
+                rating.style.color = '#ADBF3A';
+            } else {
+                rating.style.color = '#CA3838';
+            }
+
 
             rating.innerText = movie.rating;
 
             const img = document.createElement('img');
             img.src = `./images/${id}.jpg`;
-            const container = document.querySelector('.films_image');
-            container.appendChild(img);
+            filmsImage.appendChild(img);
 
             description.innerText = movie.description;
 
@@ -65,7 +72,6 @@ const getMovie = (id) => {
             })
 
             movie.actors.forEach((actor) => {
-                const actorsInfo = document.querySelector('.actors_info');
                 const movieActors = document.createElement('div');
                 movieActors.className ='actors_info-info';
                 actorsInfo.append(movieActors);
@@ -87,7 +93,6 @@ const getMovie = (id) => {
             })
 
             movie.similar.forEach((similar) => {
-                const similarMovies = document.querySelector('.similar-movies');
                 const similarMovie = document.createElement('div');
                 similarMovie.className = 'similar-movies-img';
                 similarMovies.append(similarMovie);

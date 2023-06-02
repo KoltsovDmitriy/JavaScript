@@ -3,9 +3,8 @@ import {movies} from './data.js';
 //1
 const newMovies = movies.map((movies) => {
     movies.actors.forEach((actors) => {
-        const today = new Date();       
         if (actors.birthyear != null)
-        actors.age = today.getFullYear() - actors.birthyear; 
+        actors.age = new Date().getFullYear() - actors.birthyear; 
     });
     return movies;
 });

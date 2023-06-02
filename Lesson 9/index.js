@@ -1,36 +1,35 @@
 import {movies} from './data.js';
 
 //1
-const newMovies = movies.concat();
-
-newMovies.forEach((movies) => {
+const newMovies = movies.map((movies) => {
     movies.actors.forEach((actors) => {
         const today = new Date();       
         if (actors.birthyear != null)
-        actors.age = today.getFullYear() - actors.birthyear;
+        actors.age = today.getFullYear() - actors.birthyear; 
     });
+    return movies;
 });
 
 console.log(newMovies); 
 
 
 //2
-const nameGenres = newMovies.map((genre) => {
+const genreNames = newMovies.map((genre) => {
     return genre.genre
 });
-const allGenre = [... new Set(nameGenres.flat())];
+const allGenres = [... new Set(genreNames.flat())];
 
-const collectionByGenre = allGenre.map((genre) => {
-    const moviesArr = [];
+const collectionOfGenres = allGenres.map((genre) => {
+    const moviesArray = [];
     
     newMovies.map((movie) => {        
         if ((movie.genre).includes(genre)){    
-            moviesArr.push(movie.title);
+            moviesArray.push(movie.title);
         }; 
     });
 
-    const collection = {genre, moviesArr};
+    const collection = {genre, moviesArray};
     return collection;    
 })
 
-console.log(collectionByGenre);
+console.log(collectionOfGenres);

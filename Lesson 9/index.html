@@ -11,6 +11,7 @@
     <title>JS Practice (DOM)</title>
 </head>
 <body>
+<div class="wrapp">
     <div class="wrapper">
         <div class="header">
             <h1 class="header-name" id="title"></h1>
@@ -18,7 +19,7 @@
                 <h2 class="header_rating-info rating_info">Rating:</h2>
                 <div class="rating_info-score score">
                     <div class="score-number" ></div>
-                    <div class="score-all score-number">/10</div>
+                    <div class="score-all score-number">/ 10</div>
                 </div>
             </div>
         </div>
@@ -39,11 +40,17 @@
         </div>
         <h2 class="similar">Similar movies</h2>
         <div class="similar-movies">
-            
-        </div>
-        
+        </div>        
     </div>
-    
+    <div class="rate_modal">
+        <div class="rate_modal-info">Rate this</div>
+        <div class="rate_modal-name"></div>
+        <form class="rate_form rate">
+            <input class="rate_input" type="text">
+            <button class="rate_btn" type="submit">RATE</button>
+        </form>
+    </div>
+</div>    
 <script type="module" src="./index.js"></script>
 </body>
 </html>

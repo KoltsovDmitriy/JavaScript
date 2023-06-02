@@ -34,8 +34,10 @@ const newMovies = movies.map((movies) => {
 // console.log(collectionOfGenres);
 
 //3
+
 const title = document.querySelector('.header-name');
-const rating = document.querySelector('.score-number');
+const rating = document.querySelector('.rating_info-score');
+const ratingScore = document.querySelector('.score-number');
 const filmsImage = document.querySelector('.films_image');
 const description = document.querySelector('.films_info-description');
 const genres = document.querySelector('.films_info-genre');
@@ -48,15 +50,15 @@ const getMovie = (id) => {
             title.innerText = movie.title;
 
             if (movie.rating >=8) {
-                rating.style.color = '#64C342';
+                ratingScore.style.color = '#64C342';
             } else if (movie.rating >=6) {
-                rating.style.color = '#ADBF3A';
+                ratingScore.style.color = '#ADBF3A';
             } else {
-                rating.style.color = '#CA3838';
+                ratingScore.style.color = '#CA3838';
             }
 
 
-            rating.innerText = movie.rating;
+            ratingScore.innerText = movie.rating;
 
             const img = document.createElement('img');
             img.src = `./images/${id}.jpg`;
@@ -110,8 +112,47 @@ const getMovie = (id) => {
             })
 
         }
-       
-
+        
     })
+//4
+    const rateFilm = document.querySelector('.rate_modal-name');
+    const rateBtn = document.querySelector('.rate_btn');
+    const rateInput = document.querySelector('.rate_input');
+    rateFilm.innerText = newMovies[id-1].title;
+
+    rating.addEventListener('mouseover', () => {
+        const rateForm = document.querySelector('.rate_modal');
+        rateForm.classList.add('rate_modal-block');        
+    })
+    
+    rateBtn.addEventListener('click', (event)=>{
+        event.preventDefault();
+        if((rateInput.value > 10) || (rateInput.value < 0) || (isNaN(rateInput.value)) || (rateInput.value == '')) {
+            alert('Введите число от 0 до 10')
+            rateInput.value = "";
+        }
+        else {
+
+            let ratingScoreNew = (+ratingScore.innerText + +rateInput.value)/2;
+            ratingScore.innerText = ratingScoreNew.toFixed(1);
+
+            if (ratingScoreNew.toFixed(1) >=8) {
+                ratingScore.style.color = '#64C342';
+            } else if (ratingScoreNew.toFixed(1) >=6) {
+                ratingScore.style.color = '#ADBF3A';
+            } else {
+                ratingScore.style.color = '#CA3838';
+            }
+            
+            rateInput.value = "";
+        }
+       
+    })
+    
 }
 getMovie(3);
+
+
+
+
+

@@ -9,32 +9,31 @@ const newMovies = movies.map((movies) => {
     return movies;
 });
 
-// console.log(newMovies); 
+console.log(newMovies); 
 
 
 //2
-// const genreNames = newMovies.map((genre) => {
-//     return genre.genre
-// });
-// const allGenres = [... new Set(genreNames.flat())];
+const genreNames = newMovies.map((genre) => {
+    return genre.genre
+});
+const allGenres = [... new Set(genreNames.flat())];
 
-// const collectionOfGenres = allGenres.map((genre) => {
-//     const moviesArray = [];
+const collectionOfGenres = allGenres.map((genre) => {
+    const moviesArray = [];
     
-//     newMovies.map((movie) => {        
-//         if ((movie.genre).includes(genre)){    
-//             moviesArray.push(movie.title);
-//         }; 
-//     });
+    newMovies.map((movie) => {        
+        if ((movie.genre).includes(genre)){    
+            moviesArray.push(movie.title);
+        }; 
+    });
 
-//     const collection = {genre, moviesArray};
-//     return collection;    
-// })
+    const collection = {genre, moviesArray};
+    return collection;    
+})
 
-// console.log(collectionOfGenres);
+console.log(collectionOfGenres);
 
-//3
-
+//3, 4
 const title = document.querySelector('.header-name');
 const rating = document.querySelector('.rating_info-score');
 const ratingScore = document.querySelector('.score-number');
@@ -56,7 +55,6 @@ const getMovie = (id) => {
             } else {
                 ratingScore.style.color = '#CA3838';
             }
-
 
             ratingScore.innerText = movie.rating;
 
@@ -107,12 +105,8 @@ const getMovie = (id) => {
                         similarMovie.append(imgSimilar);
                     }
                 })
-                
-    
             })
-
         }
-        
     })
 //4
     const rateFilm = document.querySelector('.rate_modal-name');
@@ -132,7 +126,6 @@ const getMovie = (id) => {
             rateInput.value = "";
         }
         else {
-
             let ratingScoreNew = (+ratingScore.innerText + +rateInput.value)/2;
             ratingScore.innerText = ratingScoreNew.toFixed(1);
 
@@ -143,12 +136,9 @@ const getMovie = (id) => {
             } else {
                 ratingScore.style.color = '#CA3838';
             }
-            
             rateInput.value = "";
         }
-       
     })
-    
 }
 getMovie(3);
 

@@ -58,16 +58,11 @@ body{
     align-items: center;
 }
 
-
-
 .films{
     display: flex;
     justify-content: start;
     margin-left: 32px;
     margin-top: 16px;
-}
-.films_image{
-
 }
 .films_info{
     margin-left: 20px;
@@ -79,7 +74,6 @@ body{
     font-size: 14px;
     line-height: 21px;
 }
-
 .films_info-genre{
     margin-top: 18px;
     display: flex;
@@ -115,7 +109,6 @@ body{
 .similar-movies{
     margin-left: 32px;
 }
-
 .actors_cast{
     justify-content: start;
 }
@@ -126,7 +119,6 @@ body{
 .actors_info-img{
     display: flex;
     justify-content: center;
-    
 }
 .actors_info-img img{
     border-radius: 25px;
@@ -136,8 +128,6 @@ body{
     font-size: 12px;
     line-height: 18px;
 }
-
-
 .similar{
     font-weight: 500;
     font-size: 20px;

@@ -1,0 +1,155 @@
+body{
+    font-family: 'Poppins';
+    font-style: normal;
+    color: white;
+    background: #000000;
+}
+.wrapper{
+    width: 1200px;
+    height: 583px;
+    background-color: brown;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background: #2B2B2B;
+}
+.header{
+    margin-top: 24px;
+    margin-left: 32px;
+    margin-right: 32px;
+    display: flex;
+    justify-content: space-between;
+}
+.header-name{
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 32px;
+    margin: 0px;
+}
+.header_rating{
+    display: flex;
+    gap: 10px;
+}
+.header_rating-info{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #8B8B8B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rating_info-score{
+    display: flex;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+}
+.score-number{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.films{
+    display: flex;
+    justify-content: start;
+    margin-left: 32px;
+    margin-top: 16px;
+}
+.films_image{
+
+}
+.films_info{
+    margin-left: 20px;
+}
+.films_info-description{
+    width: 640px;
+    height: auto;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.films_info-genre{
+    margin-top: 18px;
+    display: flex;
+    justify-content: start;
+    gap: 4px;
+   
+}
+.genre{
+    background: #383838;
+    width: 86px;
+    height: 32px;   
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.genre-2{
+    background: #383838;
+    width: 86px;
+    height: 32px;
+    margin-left: 4px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.similar-movies{
+    margin-left: 32px;
+}
+
+.actors_cast{
+    justify-content: start;
+}
+.actors_info{
+    display: flex;
+    gap: 10px;
+}
+.actors_info-img{
+    display: flex;
+    justify-content: center;
+    
+}
+.actors_info-img img{
+    border-radius: 25px;
+}
+.actors_info-name{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+
+.similar{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 32px;
+    margin-left: 32px;
+    margin-bottom: 0px;
+}
+.similar-movies{
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+}
+.similar-movies-img{
+    width: 108px;
+    height: 135px;
+}
+.similar-movies-img img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}

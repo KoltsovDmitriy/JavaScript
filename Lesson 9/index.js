@@ -1,16 +1,17 @@
 import {movies} from './data.js';
 
 //1
-const newMovies = movies.map((movies) => {
-    movies.actors.forEach((actors) => {
-        if (actors.birthyear != null)
-        actors.age = new Date().getFullYear() - actors.birthyear; 
+const newMovies = movies.map((movie) => {
+    const actorsArr = movie.actors.map((actor) => {
+        const actorsNew = {... actor};
+        if (actor.birthyear)
+        actorsNew.age = new Date().getFullYear() - actor.birthyear;
+        return actorsNew;
     });
-    return movies;
+    return {... movie, actors: actorsArr};
 });
-
-console.log(newMovies); 
-
+// console.log(newMovies[2].actors[2]);
+// console.log(movies[1].actors[2]);
 
 //2
 const genreNames = newMovies.map((genre) => {
@@ -20,20 +21,19 @@ const allGenres = [... new Set(genreNames.flat())];
 
 const collectionOfGenres = allGenres.map((genre) => {
     const moviesArray = [];
-    
     newMovies.map((movie) => {        
         if ((movie.genre).includes(genre)){    
             moviesArray.push(movie.title);
         }; 
     });
-
     const collection = {genre, moviesArray};
     return collection;    
 })
 
-console.log(collectionOfGenres);
+// console.log(collectionOfGenres);
 
 //3, 4
+const wrapper = document.querySelector('.wrapper');
 const title = document.querySelector('.header-name');
 const rating = document.querySelector('.rating_info-score');
 const ratingScore = document.querySelector('.score-number');
@@ -43,77 +43,83 @@ const genres = document.querySelector('.films_info-genre');
 const actorsInfo = document.querySelector('.actors_info');
 const similarMovies = document.querySelector('.similar-movies');
 
+let ratingColor = '';
+const changeColor = (element) => {
+    if (element >=8) ratingColor = '#64C342';
+    else if (element >=6) ratingColor = '#ADBF3A';
+    else ratingColor = '#CA3838';
+}
+
 const getMovie = (id) => {
-    newMovies.forEach((movie) => {
-        if (movie.id === id) {
-            title.innerText = movie.title;
+    
+    const foundMovie = newMovies.find((movie) => movie.id === id );
+        if (!foundMovie) return (wrapper.innerHTML = 'Movie is not found');
 
-            if (movie.rating >=8) {
-                ratingScore.style.color = '#64C342';
-            } else if (movie.rating >=6) {
-                ratingScore.style.color = '#ADBF3A';
-            } else {
-                ratingScore.style.color = '#CA3838';
-            }
+        title.innerText = foundMovie.title;            
+        changeColor(foundMovie.rating);
+        ratingScore.style.color = ratingColor;
+        ratingScore.innerText = foundMovie.rating;
 
-            ratingScore.innerText = movie.rating;
+        const img = document.createElement('img');
+        img.src = `./images/${id}.jpg`;
+        filmsImage.appendChild(img);
 
-            const img = document.createElement('img');
-            img.src = `./images/${id}.jpg`;
-            filmsImage.appendChild(img);
+        description.innerText = foundMovie.description;
 
-            description.innerText = movie.description;
+        foundMovie.genre.forEach((genre) => {
+            const movieGenre = document.createElement('div');
+            movieGenre.className = 'genre';
+            genres.append(movieGenre);
+            movieGenre.innerText = genre;
+            
+        })
 
-            movie.genre.forEach((genre) => {
-                const movieGenre = document.createElement('div');
-                movieGenre.className = 'genre';
-                genres.append(movieGenre);
-                movieGenre.innerText = genre;
-            })
+           
+        foundMovie.actors.forEach((actor) => {
 
-            movie.actors.forEach((actor) => {
-                const movieActors = document.createElement('div');
-                movieActors.className ='actors_info-info';
-                actorsInfo.append(movieActors);
+            const movieActors = document.createElement('div');
+            movieActors.className ='actors_info-info';
+            actorsInfo.append(movieActors);
 
-                const actorsInfoImg = document.createElement('div');
-                actorsInfoImg.className = 'actors_info-img';
-                movieActors.append(actorsInfoImg);
+            const actorsInfoImg = document.createElement('div');
+            actorsInfoImg.className = 'actors_info-img';
+            movieActors.append(actorsInfoImg);
 
-                const actorsInfoName = document.createElement('div');
-                actorsInfoName.className = 'actors_info-name';
-                movieActors.append(actorsInfoName);
+            const actorsInfoName = document.createElement('div');
+            actorsInfoName.className = 'actors_info-name';
+            movieActors.append(actorsInfoName);
 
-                const actorName = actor.name.toLowerCase().split(" ").pop();
-                const imgActor = document.createElement('img');
-                imgActor.src = `./images/actors/${actorName}.jpg`;
-                actorsInfoImg.appendChild(imgActor);
+            const actorName = actor.name.toLowerCase().split(" ").pop();
+            const imgActor = document.createElement('img');
+            imgActor.src = `./images/actors/${actorName}.jpg`;
+            actorsInfoImg.append(imgActor);
 
-                actorsInfoName.innerText = actor.name;
-            })
+            actorsInfoName.innerText = actor.name;
+        })
 
-            movie.similar.forEach((similar) => {
-                const similarMovie = document.createElement('div');
-                similarMovie.className = 'similar-movies-img';
-                similarMovies.append(similarMovie);
-                const imgSimilar = document.createElement('img');
+        foundMovie.similar.forEach((similar) => {
+            const similarMovie = document.createElement('div');
+            similarMovie.className = 'similar-movies-img';
+            similarMovies.append(similarMovie);
+            
+            const imgSimilar = document.createElement('img');
 
-                newMovies.forEach((similarMovies) =>{
+            newMovies.forEach((similarMovies) =>{
                     
-                    if(similar.includes(similarMovies.title)) {
-                        imgSimilar.src = `./images/${similarMovies.id}.jpg`;
-                        similarMovie.append(imgSimilar);
-                    }
-                })
+                if(similar.includes(similarMovies.title)) {
+                    imgSimilar.src = `./images/${similarMovies.id}.jpg`;
+                    similarMovie.append(imgSimilar);
+                }
             })
-        }
-    })
+        })
+        
+    
 //4
     const rateFilm = document.querySelector('.rate_modal-name');
     const rateBtn = document.querySelector('.rate_btn');
     const rateInput = document.querySelector('.rate_input');
     rateFilm.innerText = newMovies[id-1].title;
-
+        
     rating.addEventListener('mouseover', () => {
         const rateForm = document.querySelector('.rate_modal');
         rateForm.classList.add('rate_modal-block');        
@@ -126,21 +132,15 @@ const getMovie = (id) => {
             rateInput.value = "";
         }
         else {
-            let ratingScoreNew = (+ratingScore.innerText + +rateInput.value)/2;
-            ratingScore.innerText = ratingScoreNew.toFixed(1);
-
-            if (ratingScoreNew.toFixed(1) >=8) {
-                ratingScore.style.color = '#64C342';
-            } else if (ratingScoreNew.toFixed(1) >=6) {
-                ratingScore.style.color = '#ADBF3A';
-            } else {
-                ratingScore.style.color = '#CA3838';
-            }
+            let ratingScoreNew = ((+ratingScore.innerText + +rateInput.value)/2).toFixed(1);
+            ratingScore.innerText = ratingScoreNew;
+            changeColor(ratingScoreNew);
+            ratingScore.style.color = ratingColor;
             rateInput.value = "";
         }
     })
 }
-getMovie(3);
+getMovie(2);
 
 
 

@@ -80,7 +80,7 @@ const getMovie = (id) => {
             actorsInfo.append(movieActors);
             
             const actorsInfoImg = document.createElement('div');
-            actorsInfoImg.className = 'actors_info-img';
+            actorsInfoImg.classList.add('actors_info-img');
             movieActors.append(actorsInfoImg);
             
             const actorsInfoName = document.createElement('div');

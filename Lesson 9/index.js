@@ -62,31 +62,29 @@ const getMovie = (id) => {
 
         const img = document.createElement('img');
         img.src = `./images/${id}.jpg`;
-        filmsImage.appendChild(img);
+        filmsImage.append(img);
 
         description.innerText = foundMovie.description;
 
         foundMovie.genre.forEach((genre) => {
             const movieGenre = document.createElement('div');
-            movieGenre.className = 'genre';
+            movieGenre.classList.add('genre');
             genres.append(movieGenre);
             movieGenre.innerText = genre;
             
         })
-
            
         foundMovie.actors.forEach((actor) => {
-
             const movieActors = document.createElement('div');
-            movieActors.className ='actors_info-info';
+            movieActors.classList.add('actors_info-info');
             actorsInfo.append(movieActors);
-
+            
             const actorsInfoImg = document.createElement('div');
             actorsInfoImg.className = 'actors_info-img';
             movieActors.append(actorsInfoImg);
-
+            
             const actorsInfoName = document.createElement('div');
-            actorsInfoName.className = 'actors_info-name';
+            actorsInfoName.classList.add('actors_info-name');
             movieActors.append(actorsInfoName);
 
             const actorName = actor.name.toLowerCase().split(" ").pop();
@@ -96,24 +94,22 @@ const getMovie = (id) => {
 
             actorsInfoName.innerText = actor.name;
         })
-
         foundMovie.similar.forEach((similar) => {
             const similarMovie = document.createElement('div');
-            similarMovie.className = 'similar-movies-img';
+            similarMovie.classList.add('similar-movies-img');
             similarMovies.append(similarMovie);
             
             const imgSimilar = document.createElement('img');
 
-            newMovies.forEach((similarMovies) =>{
+            newMovies.forEach((similarMovieAnother) =>{
                     
-                if(similar.includes(similarMovies.title)) {
-                    imgSimilar.src = `./images/${similarMovies.id}.jpg`;
+                if(similar.includes(similarMovieAnother.title)) {
+                    imgSimilar.src = `./images/${similarMovieAnother.id}.jpg`;
                     similarMovie.append(imgSimilar);
                 }
             })
         })
         
-    
 //4
     const rateFilm = document.querySelector('.rate_modal-name');
     const rateBtn = document.querySelector('.rate_btn');

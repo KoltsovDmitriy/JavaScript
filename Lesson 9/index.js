@@ -138,7 +138,3 @@ const getMovie = (id) => {
 }
 getMovie(2);
 
-
-
-
-

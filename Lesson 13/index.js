@@ -1,7 +1,8 @@
 import {data} from './data.js';
+
 ///1
-document.addEventListener("DOMContentLoaded", function(){
-    document.getElementById("burger").addEventListener("click", function()
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("burger").addEventListener("click", () =>
     {
         document.querySelector(".header").classList.toggle("open")
     })
@@ -46,8 +47,8 @@ const sliderText = document.querySelector('.slider__title');
         if (i === 4) {
         i = 1;
         }
-        sliderBackground.style.backgroundImage = `url(../img/slider_image${i}.png`;
-        sliderText.style.backgroundImage = `url(../img/slider_image${i}_${i}.png`;
+        sliderBackground.style.backgroundImage = `url(./img/slider_image${i}.png`;
+        sliderText.style.backgroundImage = `url(./img/slider_image${i}_${i}.png`;
     }, 4000);
 
 ///6
@@ -70,7 +71,7 @@ const collectionOfTypes = allTypes.map((type) => {
 
 // const getTemplateCards = (data) => {
 //     data.forEach((cards) => {        
-//         const a = `<div class="film" style="background-image: url(${cards.image});">
+//         const card = `<div class="film" style="background-image: url(${cards.image});">
 //                 <div class="hover">
 //                     <div class="film__flex">                                
 //                         <img class="film__info--toggle" src="./img/Hover/Toggle.png" alt="Toggle">
@@ -85,7 +86,37 @@ const collectionOfTypes = allTypes.map((type) => {
 //                     </div>
 //                 </div>
 //             </div>`;
-//             return a;
+//             return cards;
+//     })
+// }
+// const getMovie = ()=>{
+//     const getMovieCard = data.forEach(movie => {
+//             if(movie.type.includes('show')) {
+//             const container = document.querySelector('.shows');
+//             container.insertAdjacentHTML('beforeend', getTemplateCards)
+           
+//             }
+//         });
+//     }
+// getMovie();
+
+// const getTemplateCards = (data) => {
+//     data.forEach((cards) => {        
+//         const card = `<div class="film" style="background-image: url(${cards.image});">
+//                 <div class="hover">
+//                     <div class="film__flex">                                
+//                         <img class="film__info--toggle" src="./img/Hover/Toggle.png" alt="Toggle">
+//                         <div class="film__info--rating">${cards.rating}</div>
+//                         <div class="film__info--year">${cards.year}</div>
+//                     </div>
+//                     <div class="film__name"><p>${cards.title}</p></div>
+//                     <div class="film__description"><p>${cards.description}</p></div>
+//                     <div class="film__button">
+//                         <a href="${cards.trailer}" class="film__button--watch">WATCH</a>
+//                         <img src="./img/Hover/Icon_watch.png" class="film__button--text" alt="">
+//                     </div>
+//                 </div>
+//             </div>`;
 //     })
     
 // }

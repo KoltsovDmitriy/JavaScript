@@ -52,7 +52,7 @@ const changeColor = (element) => {
 
 const getMovie = (id) => {
     
-    const foundMovie = newMovies.find((movie) => movie.id === id );
+        const foundMovie = newMovies.find((movie) => movie.id === id );
         if (!foundMovie) return (wrapper.innerHTML = 'Movie is not found');
 
         title.innerText = foundMovie.title;            

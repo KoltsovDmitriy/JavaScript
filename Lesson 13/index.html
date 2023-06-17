@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>HBO</title>
+</head>
+<body>
+    <header class="header">
+        <div class="wrapper">
+            <div class="header__wrapper">
+                <div class="header__logo">
+                    <a href="#" class="header__logo--link">
+                        <img src="./img/HBO.png" alt="HBO" class="header__logo--pic">
+                    </a>
+                </div>
+                <button class="header__burger-btn" id="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="header__nav menu" id="menu">
+                    <ul class="header__list menu__list">
+                        <li class="header__item menu__item">
+                            <a href="#shows" class="header__link1 link menu__link">TV Shows</a>
+                        </li>
+                        <li class="header__item menu__item">
+                            <a href="#movies" class="header__link1 link menu__link">Movies</a>
+                        </li>
+                        <li class="header__item menu__item">
+                            <a href="#cartoons" class="header__link2 link menu__link">Cartoons</a>
+                        </li> 
+                        <li class="header__item menu__item">
+                            <a href="#" class="header__link3 menu__link">Free episodes</a>
+                        </li>
+                        <li class="header__item menu__item">
+                            <a href="#" class="header__link4 menu__link">Schedule</a>
+                        </li>
+                        <li class="header__item menu__item">
+                            <a class="header__link5 menu__link">Sign in</a>                            
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="slider">
+            <div class="wrapper">
+               <div class="slider__image">
+                    <div class="slider__content">
+                        <div class="slider__title" style="background-image: url(./img/The_Last_of_Us_logo_1.png);">                            
+                        </div>
+                        <div class="slider__line">
+                            <div class="slider__line-active">
+                            </div>
+                        </div>
+                        <form action="https://www.youtube.com/watch?v=uLtkt8BonwM&ab_channel=HBOMax" target="_blank">
+                            <button class="slider__button" style="background-image: url(./img/Button_1.png);">
+                                <img class="slider__button--img" src="./img/Button_2.png" alt="">
+                                <p>Watch the Trailer</p>
+                            </button>
+                        </form>
+                    </div>                    
+               </div>
+        </section>
+        
+        <div class="wrapper">
+            <section class="films wrapper__films container">
+              <div class="shows" id="shows">
+                 <h2 class="main__title">
+                      TV Shows
+                 </h2>
+                 <div class="films__wrappers">
+                      <div class="films__wrapper show">
+                      <div class="film" style="background-image: url(./img/white_lotus.webp); background-size: cover;">
+                          <div class="hover">
+                              <div class="film__flex">                                
+                                  <img class="film__info--toggle" src="./img/Hover/Toggle.png" alt="Toggle">
+                                  <img class="film__info--8_1" src="./img/Hover/8.1.png" alt="Rating">
+                                  <img class="film__info--2022" src="./img/Hover/2022.png" alt="Year">
+                              </div>
+                              <div class="film__season"><p>Season 1</p></div>
+                              <div class="film__name"><p>House of the Dragon</p></div>
+                              <div class="film__description"><p>An internal succession war within House Targaryen at the height of its power, 172 years before the birth of Daenerys Targaryen.</p></div>
+                              <div class="film__button">
+                                  <a href="" class="film__button--watch">WATCH</a>
+                                  <img src="./img/Hover/Icon_watch.png" class="film__button--text" alt="">
+                              </div>
+                          </div>
+                      </div>                    
+                      </div>
+                      <img src="./img/arrows_navigation.png" alt="" height="40px">
+                  </div>
+                </div>
+              <div class="movies" id="movies">
+                  <h2 class="main__title">
+                      Movies
+                  </h2>
+                 <div class="films__wrapper">
+                      <div class="movies__wrapper films__wrapper show">
+                          <div class="film" style="background-image: url(./img/bullet_train.png);">
+                              <div class="hover">
+                                  <div class="film__flex">                                
+                                      <img class="film__info--toggle" src="./img/Hover/Toggle.png" alt="Toggle">
+                                      <img class="film__info--8_1" src="./img/Hover/8.1.png" alt="Rating">
+                                      <img class="film__info--2022" src="./img/Hover/2022.png" alt="Year">
+                                  </div>
+                                  <div class="film__season"><p>Season 1</p></div>
+                                  <div class="film__name"><p>House of the Dragon</p></div>
+                                  <div class="film__description"><p>An internal succession war within House Targaryen at the height of its power, 172 years before the birth of Daenerys Targaryen.</p></div>
+                                  <div class="film__button">
+                                      <a href="" class="film__button--watch">WATCH</a>
+                                      <img src="./img/Hover/Icon_watch.png" class="film__button--text" alt="">
+                                  </div>
+                              </div>
+                          </div>         
+                      </div>
+                      <img src="./img/arrows_navigation.png" alt="" height="40px">
+                  </div>
+              </div>
+              <div class="cartoons" id="cartoons">
+                 <h2 class="main__title">
+                      Cartoons
+                 </h2>
+                 <div class="films__wrappers" >
+                  <div class="cartoons__wrapper films__wrapper cartoon">
+                  <div class="film" style="background-image: url(./img/looney_tunes.png);">
+                      <div class="hover">
+                          <div class="film__flex">                                
+                              <img class="film__info--toggle" src="./img/Hover/Toggle.png" alt="Toggle">
+                              <img class="film__info--8_1" src="./img/Hover/8.1.png" alt="Rating">
+                              <img class="film__info--2022" src="./img/Hover/2022.png" alt="Year">
+                          </div>
+                          <div class="film__season"><p>Season 1</p></div>
+                          <div class="film__name"><p>House of the Dragon</p></div>
+                          <div class="film__description"><p>An internal succession war within House Targaryen at the height of its power, 172 years before the birth of Daenerys Targaryen.</p></div>
+                          <div class="film__button">
+                              <a href="" class="film__button--watch">WATCH</a>
+                              <img src="./img/Hover/Icon_watch.png" class="film__button--text" alt="">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="film" style="background-image: url(./img/adventure_time.png);">
+                      <div class="hover">
+                          <div class="film__flex">                                
+                              <img class="film__info--toggle" src="./img/Hover/Toggle.png" alt="Toggle">
+                              <img class="film__info--8_1" src="./img/Hover/8.1.png" alt="Rating">
+                              <img class="film__info--2022" src="./img/Hover/2022.png" alt="Year">
+                          </div>
+                          <div class="film__season"><p>Season 1</p></div>
+                          <div class="film__name"><p>House of the Dragon</p></div>
+                          <div class="film__description"><p>An internal succession war within House Targaryen at the height of its power, 172 years before the birth of Daenerys Targaryen.</p></div>
+                          <div class="film__button">
+                              <a href="" class="film__button--watch">WATCH</a>
+                              <img src="./img/Hover/Icon_watch.png" class="film__button--text" alt="">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="film" style="background-image: url(./img/tom_and_jerry.png);">
+                      <div class="hover">
+                          <div class="film__flex">                                
+                              <img class="film__info--toggle" src="./img/Hover/Toggle.png" alt="Toggle">
+                              <img class="film__info--8_1" src="./img/Hover/8.1.png" alt="Rating">
+                              <img class="film__info--2022" src="./img/Hover/2022.png" alt="Year">
+                          </div>
+                          <div class="film__season"><p>Season 1</p></div>
+                          <div class="film__name"><p>House of the Dragon</p></div>
+                          <div class="film__description"><p>An internal succession war within House Targaryen at the height of its power, 172 years before the birth of Daenerys Targaryen.</p></div>
+                          <div class="film__button">
+                              <a href="" class="film__button--watch">WATCH</a>
+                              <img src="./img/Hover/Icon_watch.png" class="film__button--text" alt="">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="film" style=" background-image: url(./img/looney_tunes.png);">
+                      <div class="hover">
+                          <div class="film__flex">                                
+                              <img class="film__info--toggle" src="./img/Hover/Toggle.png" alt="Toggle">
+                              <img class="film__info--8_1" src="./img/Hover/8.1.png" alt="Rating">
+                              <img class="film__info--2022" src="./img/Hover/2022.png" alt="Year">
+                          </div>
+                          <div class="film__season"><p>Season 1</p></div>
+                          <div class="film__name"><p>House of the Dragon</p></div>
+                          <div class="film__description"><p>An internal succession war within House Targaryen at the height of its power, 172 years before the birth of Daenerys Targaryen.</p></div>
+                          <div class="film__button">
+                              <a href="" class="film__button--watch">WATCH</a>
+                              <img src="./img/Hover/Icon_watch.png" class="film__button--text" alt="">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="film" style="background-image: url(./img/adventure_time.png);">
+                      <div class="hover">
+                          <div class="film__flex">                                
+                              <img class="film__info--toggle" src="./img/Hover/Toggle.png" alt="Toggle">
+                              <img class="film__info--8_1" src="./img/Hover/8.1.png" alt="Rating">
+                              <img class="film__info--2022" src="./img/Hover/2022.png" alt="Year">
+                          </div>
+                          <div class="film__season"><p>Season 1</p></div>
+                          <div class="film__name"><p>House of the Dragon</p></div>
+                          <div class="film__description"><p>An internal succession war within House Targaryen at the height of its power, 172 years before the birth of Daenerys Targaryen.</p></div>
+                          <div class="film__button">
+                              <a href="" class="film__button--watch">WATCH</a>
+                              <img src="./img/Hover/Icon_watch.png" class="film__button--text" alt="">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="film" style="background-image: url(./img/tom_and_jerry.png);">
+                      <div class="hover">
+                          <div class="film__flex">                                
+                              <img class="film__info--toggle" src="./img/Hover/Toggle.png" alt="Toggle">
+                              <img class="film__info--8_1" src="./img/Hover/8.1.png" alt="Rating">
+                              <img class="film__info--2022" src="./img/Hover/2022.png" alt="Year">
+                          </div>
+                          <div class="film__season"><p>Season 1</p></div>
+                          <div class="film__name"><p>House of the Dragon</p></div>
+                          <div class="film__description"><p>An internal succession war within House Targaryen at the height of its power, 172 years before the birth of Daenerys Targaryen.</p></div>
+                          <div class="film__button">
+                              <a href="" class="film__button--watch">WATCH</a>
+                              <img src="./img/Hover/Icon_watch.png" class="film__button--text" alt="">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="film" style="background-image: url(./img/looney_tunes.png);">
+                      <div class="hover">
+                          <div class="film__flex">                                
+                              <img class="film__info--toggle" src="./img/Hover/Toggle.png" alt="Toggle">
+                              <img class="film__info--8_1" src="./img/Hover/8.1.png" alt="Rating">
+                              <img class="film__info--2022" src="./img/Hover/2022.png" alt="Year">
+                          </div>
+                          <div class="film__season"><p>Season 1</p></div>
+                          <div class="film__name"><p>House of the Dragon</p></div>
+                          <div class="film__description"><p>An internal succession war within House Targaryen at the height of its power, 172 years before the birth of Daenerys Targaryen.</p></div>
+                          <div class="film__button">
+                              <a href="" class="film__button--watch">WATCH</a>
+                              <img src="./img/Hover/Icon_watch.png" class="film__button--text" alt="">
+                          </div>
+                      </div>
+                  </div>         
+              
+              </div>
+              <img src="./img/arrows_navigation.png" alt="" height="40px">
+            </div>
+            </section>  
+          </div>        
+
+        <section class="subscriptions">
+            <div class="wrapper">
+                <div><h1 class="sub_title">Subscriptions</h1></div>
+                <div class="sub_wrapper">
+                    <div class="membership1">
+                        <div><h1 class="membership__title">HBO Membership w/7-days trial</h1></div>
+                        <div><ul class="membership__ul">
+                            <li class="membership__li">1080 resolution</li>
+                            <li class="membership__li"> Access to all movies and series</li>
+                            <li class="membership__li">Ad-free</li>
+                            </ul>
+                        </div>
+                        <div class="membership__price">
+                            <div class="membership__buy">
+                                <a href="#" class="membership__buy--text">Buy $7.99/mo</a>                            
+                            </div>
+                            <div class="membership__try">
+                                <a href="#" class="membership__try--text">Try trial</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="membership2">
+                        <div><h1 class="membership__title">HBO Membership w/7-days trial</h1></div>
+                        <div><ul class="membership__ul">
+                            <li class="membership__li">1080 resolution</li>
+                            <li class="membership__li"> Access to all movies and series</li>
+                            <li class="membership__li">Ad-free</li>
+                            </ul>
+                        </div>                    
+                        <div class="membership__price">
+                            <div class="membership__buy">
+                                <a href="#" class="membership__buy--text">Buy $7.99/mo</a>                            
+                            </div>
+                            <div class="membership__try">
+                                <a href="#" class="membership__try--text">Try trial</a>
+                            </div>
+                        </div>      
+                    </div>
+                    <div class="membership3">
+                        <div><h1 class="membership__title">HBO Membership w/7-days trial</h1></div>
+                        <div><ul class="membership__ul">
+                            <li class="membership__li">1080 resolution</li>
+                            <li class="membership__li"> Access to all movies and series</li>
+                            <li class="membership__li">Ad-free</li>
+                            </ul>
+                        </div>
+                        <div class="membership__price">
+                            <div class="membership__buy">
+                                <a href="#" class="membership__buy--text">Buy $7.99/mo</a>                            
+                            </div>
+                            <div class="membership__try">
+                                <a href="#" class="membership__try--text">Try trial</a>
+                            </div>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+        </section> 
+    </main>
+    <footer style="background-image: url(./img/image6.png); background-repeat: no-repeat; background-position: center;">
+        <div class="wrapper footer__wrapper">
+            <div class="nav">
+                <a href="">Series</a>
+                <a href="">Movies</a>
+                <a href="">Schedule</a>
+                <a href="">History</a>
+                <a href="">Shop</a>
+                <a href="">Careers</a>
+                <a href="">HBO MAX</a>
+            </div>
+            <div class="nav2">
+                <a href="">Privacy Police</a>
+                <a href="">Terms of Use</a>
+                <a href="">Ad Choices</a>                
+            </div>  
+            <div class="nav__footer">
+                <div class="support">
+                    <div class="support__nav">Support</div>
+                    <div class="support__nav-btns">
+                        <button class="support__nav-btn1">Write a message</button>
+                        <button class="support__nav-btn2">
+                            <img src="./img/e-mail_letter.png" alt="">
+                        </button>
+                        <button class="support__nav-btn3">
+                            <img src="/img/phone.png" alt="">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="enjoy-without-limits">
+                    <div>Enjoy without limits:</div>
+                    <div>
+                        <button><img src="./img/image7.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="footer__hbo">
+                <a href="index.html"><img src="./img/image2.png" alt=""></a>
+            </div>
+            <div class="footer__hbo">
+                © 2023 Home Box Office, Inc. All Rights Reserved.<br>
+                This website may contain mature content.
+            </div>
+        </div>      
+    </footer>
+    <div class="wrapper sign-up__wrapper">
+        <div class="cross"></div>
+        <section class="sign-up sign-up__section">
+            <p class="sign-up__title main__title"> SIGN UP</p>
+            <p class="sign-up__subtitle">Choose your HBO Max plan</p>
+            <div class="sign-up__card card">
+                <div class="card__item">
+                <div class="card__item--period period">
+                        <div class="period__item--year">Monthly</div>
+                        <div class="period__item--price">7.99$/mo</div>
+                </div>
+                <div class="card__item--description">You can opt out at any time.<br><br></div>
+                <div class="card__item--choose choose__button">
+                        <button class="choose__button--active">Choose</button>
+                </div>
+                </div>
+                <div class="card__item">
+                    <img src="./img/annual_btn.png" alt="image" class="card__item-active">
+                    <div class="card__item--period period period__image">
+                        <div class="period__item--year">Annual</div>
+                        <div class="period__item--price">71.99$/year</div>
+                </div>
+                <div class="card__item--description description__image">If you pay for 12 months in advance, this corresponds to a price of only PLN 5.99/month.</div>
+                <div class="card__item--choose choose__button">
+                        <button class="choose__button--active">Choose</button>
+                </div>
+                </div>
+            </div>
+            <div class="sign-up__account account">
+                <div class="account__create sign-up__subtitle">Create an account
+                </div>
+                <form class="account__form ">
+                    <div class="account__info info">
+                        <div class="info__flex">
+                            <input type="text" class="info__name info" placeholder="Your name">
+                            <input type="text" class="info__last-name info" placeholder="Your last name">
+                        </div>
+                        <input type="email" name="" id="" placeholder="Email" class="info__email">
+                        <input type="password" placeholder="Password" class="info__password info__email info">
+                        <div class="marketing-email">
+                            <input id="marketing" type="checkbox" class="marketing__chekbox">
+                            <label class="marketing__email" for="marketing">Use my email address to send marketing promotions and offers from HBO Max (a WarnerMedia company) and Affiliates via email, social media and other channels</label>
+                        </div>
+                        <button class="info__button">
+                            CREATE
+                        </button>
+                        <p class="info__privacy">To withdraw your consent (including any consent you have previously given) and to learn more about your rights and how to exercise them, please read the <span class="info__privacy--active">Privacy Policy.</span></p>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+<script type="module" src="./index.js"></script>    
+</body>
+</html>

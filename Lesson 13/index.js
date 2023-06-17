@@ -1,12 +1,13 @@
 import {data} from './data.js';
 
-///1
+///2
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("burger").addEventListener("click", () =>
     {
         document.querySelector(".header").classList.toggle("open")
     })
 })
+
 ///3
 const openSignIn = document.querySelector('.header__link5');
 const closeSingIn = document.querySelector('.cross');

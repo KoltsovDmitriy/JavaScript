@@ -1058,7 +1058,6 @@ border-radius: 6px;
     }
        
     .menu{
-      /* position: absolute; */
       right: auto;
       top: 0px;
       width: 100%;
@@ -1103,6 +1102,11 @@ border-radius: 6px;
     }
     .header.open .menu{
       visibility: visible;
+    }
+    .sign-up__account, .account__form, .account__info, .info__flex{
+        display: flex;
+        flex-wrap: wrap;
+
     }
   }
 
@@ -1315,6 +1319,115 @@ border-radius: 6px;
     }
     .slider__line{
         width: 260px;
+    }
+}
+@media (max-width: 880px){
+    .sign-up__wrapper{
+        background-image: none;
+    }
+    .sign-up__account, .account__form, .account__info, .info__flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .info__flex{
+        gap: 1rem;
+    }
+    .info__email, .marketing-email, .info__button, .info__privacy {
+        width: 90%;
+    }
+}
+@media (max-width: 800px){
+    .sign-up__wrapper{
+        width: 80%;
+    }
+    .sign-up__section, .account__form  {
+        width: 80%;
+    }
+    .account__info{
+        width: 400px;
+    }
+    .info__email
+    .info__email, .marketing-email, .info__button, .info__privacy {
+        width: 100%;
+    }
+}
+@media (max-width: 700px){
+    .sign-up__wrapper{
+         width: 90%;
+    }
+    .sign-up__section {
+        width: 400px;
+    }
+    .account__info{
+        max-width: 350px;
+    }   
+    .info__email{
+        width: 350px;
+    }
+    .sign-up{
+        width: 75%;
+    }
+    
+}
+@media (max-width: 500px){
+    .info{
+        width: 100%;
+    }
+   .sign-up__section {
+       width: 300px;
+   }
+   .account__info{
+       max-width: 300px;
+   }   
+   .info__email, .info__flex, .marketing-email, .info__button, .info__privacy{
+       width: 300px;
+   }
+   .sign-up{
+       width: 75%;
+   }
+   
+}
+@media (max-width: 450px){
+    .info{
+        width: 100%;
+    }
+   .account__info{
+       max-width: 250px;
+   }   
+   .info__email, .info__flex, .marketing-email, .info__button, .info__privacy{
+       width: 250px;
+   }
+   .sign-up{
+       width: 75%;
+   }
+   .sign-up__subtitle{
+    font-size: 20px;
+   }
+   .info{
+    font-size: 13px;
+   }
+   .marketing__email {
+    font-size: 12px;
+    line-height: normal;
+   }
+   .info__flex{
+    gap: 5px
+   }
+   .info__email{
+    margin-top: 5px;
+   }
+   .info__button, .info__privacy{
+    margin-top: 10px;
+   }
+}
+@media (max-width: 380px){
+    .account__info{
+        max-width: 200px;
+    }   
+    .info__email, .info__flex, .marketing-email, .info__button, .info__privacy{
+        width: 200px;
     }
 }
    

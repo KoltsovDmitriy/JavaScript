@@ -3,8 +3,7 @@ import {data} from './data.js';
 
 
 ///2
-document.getElementById("burger").addEventListener("click", () =>
-{
+document.getElementById("burger").addEventListener("click", () => {
     document.querySelector(".header").classList.toggle("open")
 });
 

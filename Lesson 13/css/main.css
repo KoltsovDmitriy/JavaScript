@@ -1,3 +1,15 @@
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    
+  }
 body{
     font-family: 'Lato', sans-serif;
     font-size: 13px;
@@ -5,7 +17,13 @@ body{
     font-weight: 400;
     color: #FFFFFF;
     background: #000000;
+    margin: 0 auto;
+    
 }
+
+body::-webkit-scrollbar {
+    display: none;
+  }
 
 /* Header styles start */
 .header{
@@ -14,17 +32,23 @@ body{
     left: 0;
     width: 100%;
     text-transform: uppercase;
-    margin-left: 20px;
 }
+
 .wrapper{
-    width: 1274px;
-    margin: 0 auto;    
+    
+    max-width: 1274px;
+    width: 100%;
+    margin: 0px auto;
+    overflow: hidden;
 }
 .header__wrapper{
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
     justify-content: space-between;
+    
+    margin: 0 auto; 
+
 }    
 .header__logo{
     padding-top: 24px;
@@ -43,22 +67,22 @@ body{
     text-decoration: none;
     color: rgba(255, 255, 255, 0.75);      
 }
-.header__link1{
+.header__link--shows{
     margin-right: 43px;
 }
-.header__link2{
+.header__link--movies{
     margin-right: 115px; 
 }
-.header__link3{
+.header__link--cartoons{
     margin-right: 59px;
 }
-.header__link3{
+.header__link--free{
     margin-right: 59px;
 }
-.header__link4{
+.header__link--schedule{
     margin-right: 285px;
 }
-.header__link5{
+.header__link--btn{
     font-weight: 700;
     font-size: 15px;
     background: #0059C1;
@@ -67,28 +91,27 @@ body{
     height: 40px;
     padding: 11px 32px;
     color: rgba(255, 255, 255, 1);
+    cursor: pointer;
 }
-.header__link1:hover, .header__link1:focus, .header__link1:active{
+.header__link--shows:hover, .header__link--shows:focus, .header__link--shows:active{
     color: rgba(255, 255, 255, 1);
 }
-.header__link2:hover, .header__link2:focus, .header__link2:active{
+.header__link--movies:hover, .header__link--movies:focus, .header__link--movies:active{
     color: rgba(255, 255, 255, 1);
 }
-.header__link3:hover, .header__link3:focus, .header__link3:active{
+.header__link--cartoons:hover, .header__link--cartoons:focus, .header__link--cartoons:active{
     color: rgba(255, 255, 255, 1);
 }
-.header_link4:hover, .header_link4:focus, .header__link4:active{
+.header__link--free:hover, .header__link--free:focus, .header__link--free:active{
     color: rgba(255, 255, 255, 1);
 }
-.header__link5:hover, .header__link5:focus, .header__link5:active{
-    color: rgba(255, 255, 255, .75);
+.header__link--schedule:hover, .header__link--schedule:focus, .header__link--schedule:active{
+    color: rgba(255, 255, 255, 1);
 }
 /* Header styles end */
 
 /* Main styles start */
-.main{
-    margin-left: 20px;
-}
+
 
 /*Slider styles start */
 .slider{
@@ -96,44 +119,36 @@ body{
     padding-top: 90px;    
 }
 .slider__image{
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 63.19%, #000000 100%), url(../img/Slider_bg.png);
+    background-image: url(../img/Slider_bg.png);
     height: 595px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
     padding-bottom: 20px;
     text-align: center;
-
+    background-repeat: no-repeat;
+    background-position: center;
+    
 }
 
 .slider__content{   
     width: 658px;
     height: 233px;
-    /* display: flex;
-    flex-direction: column; */
+    display: flex;
+    flex-direction: column;
 }
 .slider__title{
-    width: 658px;
+    max-width: 658px;
     height: 142.78px;
     background: no-repeat;
     background-position: center;
     background-size: contain;
-
 }
 .slider__title img{
     
 
 }
-/* .slider__title--line{   
-    padding-top: 29.22px;
-    padding-bottom: 20px;    
-}
-.slider__title--line2{
-    padding-top: 29.22px;
-    padding-bottom: 20px;
-    width: 403px;
-    margin-left: -3px;
-} */
+
 .slider__line{
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     width: 500px;
@@ -179,31 +194,14 @@ body{
 /*Slider styles end */
 
 /*Cards style start */
-.cards{
-    background-size: cover;
-    padding-top: 25px;             
-}
-.cards__wrapper{
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    /* justify-content: start;   */
-    margin-right: -295px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 16px;    
-}
-.cards__wrapper > div{
-    border-radius: 12px;
-}
 
-.cards__wrapper::-webkit-scrollbar {
-    width: 0;
-}
 .film{
     width: 210px;
     height: 300px; 
-    background-size: cover  
+    background-size: cover;
+    display: inline-block;
+    box-sizing:border-box;
+
 }
 
 /*Hover Effect style start*/
@@ -218,7 +216,8 @@ body{
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
-    width: 170px;   
+    width: 170px;
+    padding-top: 20px;   
 }
 .film__info--toggle{
     margin-left: 20.34px;    
@@ -234,12 +233,11 @@ body{
 }
 .film__info--year{
     margin-left: 105px;
-    margin-top: 20.45px;
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
     line-height: 14px;
-    color: #E3B100;
+    color: rgba(255, 255, 255, 0.50);
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);  
 }
 .film__season{
@@ -254,7 +252,7 @@ body{
     font-weight: 900;
     font-size: 18px;
     line-height: 22px;
-    margin-top: 7px;
+    margin-top: 40px;
     margin-left: 20px;
 }
 .film__description{
@@ -271,22 +269,22 @@ body{
     height: 38px;
     background: #0059C1;
     border-radius: 12px;
-    margin-top: 48px;
+    margin-top: 60px;
     margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 78.68px;
+    
 }
 .film__button:hover, .film__button:focus, .film__button:active{
     background: #E3B100;
 }
 .film__button--watch{
-    position: absolute;
     font-weight: 700;
     font-size: 13px;
-    padding-left: 106px;
-    padding-top: 11px;
 }
-.film__button--text{
-    padding: 12.82px 0 0 16.19px;
-}
+
 .hover:hover{
     opacity: 1;
     background: rgba(255, 255, 255, 0.15);
@@ -309,10 +307,6 @@ body{
 .sub_wrapper{
     display: flex;
     flex-wrap: wrap;
-    /*align-items: center;
-    justify-content: center;*/
-    /* margin-left: -6px; */
-    /* margin-right: 8px; */
     margin-top: 24px;
     margin-bottom: 32px;
 }
@@ -351,7 +345,7 @@ body{
     font-size: 16px;
     margin-left: 55px;
     margin-top: 35px;
-    list-style-position:inside
+    list-style-position:inside;
 }
 .membership__li{
     margin-bottom: 16px;
@@ -444,23 +438,12 @@ body{
     flex-direction: column;
     justify-content: space-between; 
 }
-/* .card__item--active{
-    position: relative;
-    margin-left: -50px;
-    margin-top: -10px;
-} */
 .card__item--period{
     width: 438px;
     height: 36px;    
     display: flex;
     justify-content: space-between;    
 }
-/* .card__item:last-child::after{
-    content: "";
-    content: url(../img/annual_btn.png);
-    position: relative;
-    
-} */
 .period__item--year{  
     font-weight: 900;
     font-size: 30px;
@@ -597,25 +580,28 @@ body{
 
 /* ----------------TVShows-------------------- */
 .films{
-    margin-top: 110px;
+    margin-top: 110px; 
 }
 .films__wrappers{
+    width: 100%;
     display: flex;
-    /* flex-wrap: wrap; */
-    width: 1317px;
+    max-width: 1317px;
     align-items: center;
+    overflow-x: hidden;
+    position: relative;
+
 }
 .films__wrapper{
+    width: 100%;
+    max-width: 1274px;
     margin-top: 25px;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    /* justify-content: start;   */
-    /* margin-right: -295px; */
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
     gap: 16px;
-        
+    overflow-y: hidden;
+    position: relative;
 }
 
 .films__wrapper > div{
@@ -760,35 +746,42 @@ border-radius: 6px;
 }
 .enjoy-without-limits div{
     font-weight: 700;
-font-size: 12px;
-line-height: 14px;
+    font-size: 12px;
+    line-height: 14px;
 }
 .enjoy-without-limits div:last-child{
     margin-top: 13px;
 }
-.footer__hbo{
+.footer__hbo, .footer__hbo--image{
     margin-top: 16px;
     display: flex;
     justify-content: center;
     font-size: 10px;
-line-height: 12px;
-text-align: center;
-
-color: #707070;
-margin-bottom: 16px;
-}
-
-.footer__wrapper{
-    margin-left: 20px;
+    line-height: 12px;
+    text-align: center;
+    color: #707070;
+    margin-bottom: 16px;
 }
 
 .sign-up__wrapper{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     visibility: hidden;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(15, 15, 15, 0.9)
+    background: rgba(0, 0, 0, 0.99);
+    overflow-y: scroll;
+    background-image: url(../img/signup_bg.png);
+}
+.sign-up__wrapper.open {
+    visibility:visible;
+}
+.sign-up__wrapper::-webkit-scrollbar 
+{
+    width: 0; 
 }
 .sign-up__section{
     margin: 20px;
@@ -801,18 +794,23 @@ margin-bottom: 16px;
 
 /* Крестик */
 .cross{
-    cursor: pointer;
-    position: absolute;
-    right: 35px;
-    top: 20px;
+  position: absolute;
+  cursor: pointer;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
      
 }
-.cross:before, .cross:after {
-    content: "";
-    position: absolute;
-    width: 24px;   
-    height: 4px;
-    background: rgb(255, 255, 255);
+.cross:before,
+.cross:after {
+  content: "";
+  position: absolute;
+  top: 13px;
+  right: 3px;
+  width: 24px;
+  height: 4px;
+  background: rgb(255, 255, 255);
 }
 .cross:before {
     transform: rotate(45deg);
@@ -867,6 +865,68 @@ margin-bottom: 16px;
     transform: translateY(0) rotate(-45deg);
   }
 
+.faq{
+    margin-top: 10px;
+    max-width: 1270px;
+    font-size: 18px;
+    
+}
+
+.faq__question{    
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    background: #21212C;
+    font-size: 18px;   
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    position: relative;
+    cursor: pointer;
+}
+
+.faq__question span{
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: #9E00FF;
+    right: 24px;
+    
+}
+.faq__answer{
+    overflow: hidden;
+    border-top: none;
+    border-radius: 0px 0px 6px 6px;
+    background: #1B1B24;
+    font-size: 18px;
+    color: #B7B6DE;
+    max-height: 0;
+    padding: 0px 24px 0 24px;
+    transition: all .4s linear;
+    
+}
+
+.open .faq__answer{
+    max-height: 1000px;
+    padding: 14px 24px;
+    transition: max-height 1.5s linear;
+}
+
+.faq.open .faq__question{    
+    border-radius: 6px 6px 0px 0px;
+    transition: all .5s linear;
+}
+.faq__question span:nth-child(1){
+    transform: translateY(0) rotate(90deg);
+    transition: all .5s;
+}
+.faq.open .faq__question span:nth-child(1){
+    transform: translateY(0) rotate(180deg);
+    transition: all .5s;
+}
+
 @keyframes progressbar {
     0% {
         width: 0%;
@@ -875,21 +935,137 @@ margin-bottom: 16px;
         width: 100%;
     }
 }
+/* -------Media----------------- */
+@media (max-width: 1300px) {
+    .header__wrapper,
+    .subscriptions,
+    .wrapper__films,
+    .faq__section {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    footer{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .header__link--schedule {
+        margin-right: 170px;
+    }
+    .sub_wrapper{
+        justify-content: space-around;
+        gap: 1rem;
 
-@media (max-width: 990px){
+    }
+    .membership2{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 1150px) {
+    .header__link--schedule {
+        margin-right: 50px;
+    }
+    .film{
+        width: 80%;
+        height: 80%;
+    }
+    .menu__link{
+        margin: 0;
+    }
+    .header__list {
+        gap: 5rem;
+    }
+}
+@media (max-width: 1050px) {
+    .header__list {
+        gap: 4rem;
+    }
+    .membership1, .membership2, .membership3{
+        opacity: 1;
+        width: 340px;
+        height: 224px;
+        flex-shrink: 0;
+        border: 1px solid rgba(0, 89, 193, 0.50);
+        background: linear-gradient(90deg, rgba(0, 89, 193, 0.25) 0%, rgba(13, 0, 123, 0.25) 100%);
+    }
+    .membership__title{
+        padding: 0;
+        margin: 18px 0 0 18px;
+        color: #FFF;
+        font-size: 16px;
+        font-weight: 900;
+        text-align: start;
+    }
+    .membership__ul{
+        margin: 8px 0 0 18px;
+        font-size: 12px;
+    }
+    .membership__li{
+        margin-bottom: 8px;
+    }
+    .membership__price{
+        margin-top: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .membership__buy{
+        width: 304px;
+        height: 40px;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .membership__buy--text{
+        font-size: 18px;
+    }
+    .membership__try{
+        width: 304px;
+        height: 40px;
+        margin-top: 7px;
+        margin-left: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .films__wrappers--img{
+        display: none;
+    }
+
+}
+@media (max-width: 960px) {
+    .header__list {
+        gap: 3rem;
+    }
+    .wrapper__films {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 860px){
     .header__burger-btn{
       display: block;
     }
+    .header__wrapper {
+        margin: 0;
+    }
+    .header__logo{
+        margin-left: 32px;
+    }
+    .header__burger-btn{
+        margin-right: 24px;
+    }
+       
     .menu{
       /* position: absolute; */
       right: auto;
       top: 0px;
       width: 100%;
+      height: 100%;
       background-color: #000000;
       visibility: hidden;
-      padding: 75px 20px 20px 20px;
-      transition: transform .5s, visibility .5s;
-      will-change: transform;
+      z-index: 10;
     }
     .menu__list{
       display: block;
@@ -900,16 +1076,247 @@ margin-bottom: 16px;
     
     .menu__link{
         color: rgba(255, 255, 255, 0.75);
-      font-weight: 900;
         font-size: 24px;
+        font-family: Lato;
+        font-weight: 900;
         line-height: 29px;
-      display: block;
-      padding: 10px;
+        display: block;
+        margin-top: 15px;
+        margin-left: 32px;
+        font-size: 24px;
+        font-weight: 900;
+    }
+    .header__link--btn{
+        color: #FFF;
+        font-size: 15px;
+        font-family: Lato;
+        font-weight: 700;
+        width: 304px;
+        height: 40px;
+        flex-shrink: 0;
+        padding: 0;
+        text-align: center;
+        padding-top: 6px;
+    }
+    .header__link--shows{
+        margin-top: 41px;
     }
     .header.open .menu{
-      /* transform: translateX(-140%); */
       visibility: visible;
     }
-  
   }
+
+@media (max-width: 800px){
+    .slider__content{
+        max-width: 500px;
+        
+    }
+
+    .main__title{
+        font-size: 24px;
+        margin-top: 15px;
+    }
+    .movies{
+        margin-top: 0;
+    }
+    .films__wrapper {
+        margin-top: 14px;
+    }
+    .sub_title{
+        font-size: 24px;
+    }
+    .subscriptions{
+        padding: 0;
+        margin-top: 14px;
+    }
+    .hover{
+        width: 147px;
+        height: 210px;
+    }
+    .film__flex{
+        padding-top: 8px;
+    }
+    .film__flex img{
+        width: 14px;
+        height: 13.222px;
+        margin-left: 8px;
+        display: block;
+
+    }
+    .film__info--rating{
+        margin-left: 11px;
+    }
+    .film__info--year{
+        margin-left: 61px;
+    }
+    .film__name{
+        font-size: 14px;
+        margin: 30px 8px 0 8px;
+        line-height: 15px;
+    }
+    .film__description{
+        color: #E8E8E8;
+        font-size: 9px;
+        line-height: 9px;
+        width: 132px;
+        margin: 5px 0 0 8px;
+    }
+    .film__button{
+        gap: 51.87px;
+        margin: 25px 0 0 9px;
+        width: 131px;
+        height: 38px;
+    }
+    .film__button--text{
+        width: 11.131px;
+        height: 14px;
+        
+    }
+
+    .film__button--watch{
+        color: #FFF;
+        font-size: 13px;
+        font-weight: 700;
+    }
+    .main__title{
+        margin-top: 0;
+    }
+    .shows{
+        margin-top: 15px;
+    }
+    .movies, .cartoons{
+        margin-top: 5px;
+    }
+  
+}
+
+@media (max-width: 600px){
+    .slider__content{
+        max-width: 400px;        
+    }
+    .slider__line{
+        width: 400px;
+    }
+    .footer__hbo--image{
+        display: none;
+    }
+    .nav a, .nav2 a{
+        font-size: 10px;
+        margin-top: 0;
+    }
+    .nav2{
+        margin-top: 14px;
+    }
+    .nav__footer{
+        margin-top: 14px;
+        display: flex;
+        flex-direction: column;
+    }
+    .support{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .enjoy-without-limits{
+        margin-top: 26px;
+        margin-right: 16px;
+    }
+    .footer__hbo{
+        margin: 22px 0;
+    }
+    .faq__question{ 
+        font-size: 15px;
+        height: 40px;
+    }
+    .faq__answer{
+        font-size: 15px;
+    }
+}
+@media (max-width: 600px){
+    .slider__content{
+        max-width: 300px;        
+    }
+    .slider__line{
+        width: 300px;
+    }
+}
+@media (max-width: 400px){
+    .slider__content{
+        max-width: 280px;        
+    }
+    .slider__line{
+        width: 280px;
+    }
+}
+@media (max-width: 380px){
+    .membership1, .membership2, .membership3{
+        max-width: 340px;
+    }
+}
+@media (max-width: 360px){
+    .membership1, .membership2, .membership3{
+        max-width: 320px;
+    }
+    .faq__question, .faq__answer {
+        font-size: 13px;
+    }
+    .nav{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+}
+@media (max-width: 340px){
+    .membership1, .membership2, .membership3{
+        max-width: 310px;
+    }
+    .membership__buy, .membership__try{
+        width: 280px;
+    }
+    .header__link--btn{
+        width: 250px;
+    }
+}
+@media (max-width: 330px){
+    .membership1, .membership2, .membership3{
+        max-width: 290px;
+    }
+    .membership__buy, .membership__try{
+        width: 260px;
+    }
+    .faq__question, .faq__answer {
+        font-size: 12px;
+    }
+    .slider__content{
+        max-width: 260px;        
+    }
+    .slider__line{
+        width: 260px;
+    }
+
+}
+@media (max-width: 310px){
+    .membership1, .membership2, .membership3{
+        max-width: 280px;
+    }
+    .faq__question, .faq__answer {
+        font-size: 11px;
+    }
+}
+@media (max-width: 300px){
+    .membership1, .membership2, .membership3{
+        max-width: 260px;
+    }
+    .membership__buy, .membership__try{
+        width: 240px;
+    }
+    .slider__content{
+        max-width: 260px;        
+    }
+    .slider__line{
+        width: 260px;
+    }
+}
+   
+
   

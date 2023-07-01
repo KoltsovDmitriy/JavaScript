@@ -144,10 +144,6 @@ body::-webkit-scrollbar {
     background-position: center;
     background-size: contain;
 }
-.slider__title img{
-    
-
-}
 
 .slider__line{
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
@@ -651,12 +647,10 @@ body::-webkit-scrollbar {
 .nav a:last-child{
     font-weight: 700;
     text-decoration-line: underline;
-
     background: linear-gradient(180deg, #0059C1 0%, #9E00FF 77.08%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
 }
 .nav:last-child{
     margin-top: 21px;
@@ -846,8 +840,7 @@ border-radius: 6px;
   .header__burger-btn span:nth-child(1){
     transform: translateY(-10px);
   }
-  .header__burger-btn span:nth-child(2){
-  }
+ 
   .header__burger-btn span:nth-child(3){
     transform: translateY(10px);
   }
@@ -895,23 +888,22 @@ border-radius: 6px;
     right: 24px;
     
 }
-.faq__answer{
-    overflow: hidden;
+.faq__answer{    
     border-top: none;
     border-radius: 0px 0px 6px 6px;
     background: #1B1B24;
     font-size: 18px;
     color: #B7B6DE;
-    max-height: 0;
-    padding: 0px 24px 0 24px;
-    transition: all .4s linear;
-    
+    height: 0;
+    transition: all .5s linear;
+    overflow: hidden;
 }
 
 .open .faq__answer{
-    max-height: 1000px;
+    transition: all .5s linear;
+}
+.faq__answer p{
     padding: 14px 24px;
-    transition: max-height 1.5s linear;
 }
 
 .faq.open .faq__question{    

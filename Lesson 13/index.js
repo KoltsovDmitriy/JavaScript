@@ -10,15 +10,14 @@ document.getElementById("burger").addEventListener("click", () => {
 
 ///3
 const form = document.querySelector('.sign-up__wrapper');
+const modalToggleBtns = document.querySelectorAll('.toggle__modal--btn');
+modalToggleBtns.forEach((btn) =>
+{
+    btn.addEventListener('click', () => {
+        form.classList.toggle('open');
+        })
+})
 
-const openCloseForms = (className, condition) => {
-    document.querySelector(className).addEventListener('click', () => {
-    form.classList.toggle('open', condition);
-    })   
-}
-
-openCloseForms('.header__link--btn', true);
-openCloseForms('.cross', false);
 
 
 ///4
@@ -51,10 +50,9 @@ const sliderText = document.querySelector('.slider__title');
 
 
 ///6
-const typeNames = data.map((type) => {
-    return type.type
-});
-const allTypes = [... new Set(typeNames.flat())];
+const typeNames = data.map(( {type} ) => type);
+
+const allTypes = [... new Set(typeNames)];
 
 const getItemTemplate = (item) => {
     return `<div class="film" style="background-image: url(${item.image});">
@@ -78,61 +76,28 @@ const setItemTemplate = (type) => {
     data.forEach((card) => {
         if (card.type === type) {
         const element = document.querySelector(`.${type}`);
+        if (!element) return;
         element.insertAdjacentHTML('beforeend', getItemTemplate(card));
         }
     })
 }
 
-const setItems = allTypes.forEach((type) =>{
-    setItemTemplate(type);
-})
+allTypes.forEach(setItemTemplate);
 
 
 //7
-const openDiv = document.querySelectorAll('.question');
-openDiv.forEach((event) => {
-    event.addEventListener('click', () => {
-        const parent = event.parentNode;
-        (parent.classList.contains('open')) ? (parent.classList.remove('open')) : 
-        (document.querySelectorAll('.faq').forEach((child) => {child.classList.remove('open')}),
-        parent.classList.add('open'))
-    })
+
+const handleQuestion =  ( {currentTarget: target} ) => {
+    
+    const parent = target.parentElement;
+    const answerText = parent.childNodes[3];
+    const answerTextHeight = answerText.lastChild.clientHeight;
+    parent.classList.toggle('open') ? document.querySelector('.open .faq__answer').style.height = answerTextHeight + 'px' : answerText.style.height = 0;
+}
+
+const questions = document.querySelectorAll('.question');
+
+questions.forEach((event) => {    
+    event.addEventListener('click', handleQuestion);
 })
 
-
-
-
-// Дичь
-// document.getElementById("question").addEventListener("click", () =>
-// {
-//     document.querySelector(".faq__answer").classList.toggle("open");
-//     document.querySelector(".faq").classList.toggle("open");
-// });
-// const div = document.querySelectorAll('.question');
-// div.forEach((divItem) => {
-//     divItem.addEventListener("click", (e) => {
-//         document.querySelectorAll(".faq__answer, .faq").forEach((className) => className.classList.toggle('open'))});
-// })
-// const div = document.querySelector('.question');
-// div.addEventListener('click', (e) => {
-//     document.querySelector(".faq__answer").classList.toggle("open");
-// })
-// const btnQuestion = document.querySelectorAll('.question');
-// const divAnswer = document.querySelectorAll('.faq__answer');
-// btnQuestion.forEach((link)=>{
-//     link.addEventListener('click',() =>{
-//         divAnswer.forEach((answer)=>{
-//             const handler = () =>{
-//                 answer.classList.remove('faq-enter-active');
-//                 answer.removeEventListener('transitionend', handler);
-//             }
-//             answer.style.display = 'block';
-//             answer.classList.add('faq-enter');
-//             setTimeout(() => {
-//                 answer.classList.add('faq-enter-active');
-//                 answer.classList.remove('faq-enter');
-//             }, 200);
-//             answer.addEventListener('transitionend', handler)
-//         })
-//     })
-// })

@@ -1,0 +1,14 @@
+{
+  "name": "hbo-project",
+  "version": "1.0.0",
+  "description": "It's my first project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dmitriy Koltsov",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}

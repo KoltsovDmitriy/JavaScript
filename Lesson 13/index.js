@@ -1,4 +1,5 @@
 import {data} from './data.js';
+
 ///1
 
 
@@ -85,7 +86,7 @@ const setItemTemplate = (type) => {
 allTypes.forEach(setItemTemplate);
 
 
-//7
+///7
 
 const handleQuestion =  ( {currentTarget: target} ) => {
     
@@ -101,3 +102,8 @@ questions.forEach((event) => {
     event.addEventListener('click', handleQuestion);
 })
 
+
+///Lodash
+
+const sortByYear = _.orderBy(data, ['year'],['asc']);
+console.log(sortByYear);

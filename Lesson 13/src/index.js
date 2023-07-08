@@ -52,6 +52,11 @@ const sliderText = document.querySelector('.slider__title');
     }, 4000);
 
 
+///Lodash
+
+const sortByYear = _.orderBy(data, ['year'],['asc']);
+console.log(sortByYear);
+
 ///6
 const typeNames = data.map(( {type} ) => type);
 
@@ -76,7 +81,7 @@ const getItemTemplate = (item) => {
 }   
 
 const setItemTemplate = (type) => {
-    data.forEach((card) => {
+    sortByYear.forEach((card) => {
         if (card.type === type) {
         const element = document.querySelector(`.${type}`);
         if (!element) return;
@@ -103,9 +108,3 @@ const questions = document.querySelectorAll('.question');
 questions.forEach((event) => {    
     event.addEventListener('click', handleQuestion);
 })
-
-
-///Lodash
-
-const sortByYear = _.orderBy(data, ['year'],['asc']);
-console.log(sortByYear);

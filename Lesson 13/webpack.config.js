@@ -21,8 +21,15 @@ module.exports = {
     new CopyWebpackPlugin({
         patterns: [
             { from: './img', to: 'img' },
-            { from: './css', to: 'css' },
           ]
     })
   ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
+    ]
+  }
 };

@@ -1,5 +1,7 @@
 import {data} from './data.js';
 import {} from '../node_modules/lodash/lodash.min.js';
+import './css/reset.css';
+import './css/main.css';
 ///1
 
 

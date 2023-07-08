@@ -1,5 +1,5 @@
 import {data} from './data.js';
-import {} from '../node_modules/lodash/lodash.min.js';
+import { orderBy } from 'lodash';
 import './css/reset.css';
 import './css/main.css';
 ///1
@@ -54,7 +54,7 @@ const sliderText = document.querySelector('.slider__title');
 
 ///Lodash
 
-const sortByYear = _.orderBy(data, ['year'],['asc']);
+const sortByYear = orderBy(data, ['year'],['asc']);
 console.log(sortByYear);
 
 ///6
